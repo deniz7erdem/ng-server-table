@@ -4,7 +4,7 @@ import { DatatableComponent } from './datatable/datatable.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 @NgModule({
   declarations: [
     DatatableComponent
@@ -13,7 +13,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     CommonModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressBarModule
   ],
   exports: [
     DatatableComponent

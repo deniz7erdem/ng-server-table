@@ -19,21 +19,26 @@ export class DatatableComponent implements OnInit {
   pageSizeOptions:number[] = [5, 10, 25, 100];
   pageIndex:number = 1;
 
+  isLoading:boolean = true;
+
   ngOnInit() {
     this.dataService.getUsers(1, 10).subscribe((data: any) => {
       console.log(data);
       this.dataSource = new MatTableDataSource(data.data);
       this.length = data.length;
       this.dataSource.paginator = this.paginator;
+      this.isLoading = false;
     });
   }
 
 
   getData(pageIndex: number = 1, pageSize: number = 10){
+    this.isLoading = true;
     this.dataService.getUsers(pageIndex, pageSize).subscribe((data: any) => {
       console.log(data);
       this.dataSource = new MatTableDataSource(data.data);
       this.length = data.length;
+      this.isLoading = false;
     });
   }
 
