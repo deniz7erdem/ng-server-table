@@ -10,6 +10,7 @@ export class DatatableComponent implements OnInit {
 
   @Input() dataService: any;
   @Input() displayedColumns: any;
+  @Input() columns: any;
   @Input() dataSource: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

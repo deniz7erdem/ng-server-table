@@ -8,5 +8,6 @@ import { DataService } from './data.service';
 export class AppComponent {
   constructor(public dataService:DataService){}
   title = 'app';
-  columns = ['id','first_name','last_name','email','gender','date'];
+  displayedColumns = ['id','first_name','last_name','email','gender','date'];
+  columns = ['ID','First Name','Last Name','e-Mail','Gender','Date'];
 }
