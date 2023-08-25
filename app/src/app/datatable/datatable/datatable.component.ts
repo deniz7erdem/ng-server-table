@@ -18,13 +18,16 @@ export class DatatableComponent implements OnInit {
   pageSize:number = 10;
   pageSizeOptions:number[] = [5, 10, 25, 100];
   pageIndex:number = 1;
+
   ngOnInit() {
-    this.getData();
+    this.dataService.getUsers(1, 10).subscribe((data: any) => {
+      console.log(data);
+      this.dataSource = new MatTableDataSource(data.data);
+      this.length = data.length;
+      this.dataSource.paginator = this.paginator;
+    });
   }
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
 
   getData(pageIndex: number = 1, pageSize: number = 10){
     this.dataService.getUsers(pageIndex, pageSize).subscribe((data: any) => {
