@@ -6,8 +6,12 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public dataService:DataService){}
-  title = 'app';
-  displayedColumns = ['id','first_name','last_name','email','gender','date'];
-  columns = ['ID','First Name','Last Name','e-Mail','Gender','Date'];
+  constructor(public dataService: DataService) { }
+  ngServerTableSettings = {
+    displayedColumns: ['id', 'first_name', 'last_name', 'email', 'gender', 'date'],
+    tableHeaders: ['ID', 'First Name', 'Last Name', 'e-Mail', 'Gender', 'Date'],
+    dataService: this.dataService,
+    showFirstLastButtons: true,
+  }
+
 }
