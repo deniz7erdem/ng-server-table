@@ -40,7 +40,6 @@ export class DatatableComponent implements OnInit {
 
 
   getData(pageIndex: number = 1, pageSize: number = 10) {
-    fetch
     this.isLoading = true;
     this.dataService.getUsers(pageIndex, pageSize).subscribe((data: any) => {
       console.log(data);
